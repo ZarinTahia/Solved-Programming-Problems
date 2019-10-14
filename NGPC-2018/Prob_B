@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    for(int k=1; k<=t; k++)
+    {
+        int n;
+        double l,h;
+        cin>>n>>l>>h;
+        vector<double>v;
+        double sum=0.0;
+        for(int i=0; i<n; i++)
+        {
+            double a;
+            cin>>a;
+            sum=sum+a;
+            v.push_back(a);
+        }
+        double avg=sum/n*1.0;
+        printf("Case %d:\n",k);
+        vector<double>st;
+        for(int i=0; i<n; i++)
+        {
+            double a=abs(v[i]-avg);
+            //cout<<a<<endl;
+            double b=abs(v[i]-h);
+            //cout<<b<<endl;
+            double c=abs(v[i]-l);
+            //cout<<c<<endl;
+            double db=min(b,c);
+            //cout<<db<<endl;
+            if(db<a)
+                st.push_back(v[i]);
+
+        }
+        if(st.empty())
+            cout<<"No outliers"<<endl;
+        else
+        {
+            for(int m=0; m<st.size(); m++)
+            {
+                printf("%.2f\n",st[m]);
+            }
+        }
+    }
+
+
+}
