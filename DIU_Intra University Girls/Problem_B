@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    long long n,x;
+    cin>>n>>x;
+    long long ans=9*n-3*x;
+    cout<<ans<<endl;
+
+}
