@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int o;
+    cin>>o;
+   for(int n=1;n<=o;n++)
+    {
+        string str;
+        cin>>str;
+        char arr[str.size()];
+
+        sort(str.begin(),str.end());
+
+        int k=str.size()-1;
+        int f=0;
+
+        for(int i=0;i<str.size();i=i+2)
+        {
+            if(f==(str.size()/2))
+               {
+                  arr[f]=str[(str.size()-1)];
+                  break;
+               }
+            arr[f]=str[i];
+            arr[k]=str[i+1];
+            f++;
+            k--;
+
+
+        }
+          int g=str.size()-1;
+          int t=1;
+         for(int i=0;i<sizeof(arr);i++)
+        {
+            if(i==g)
+                break;
+           if(arr[i]!=arr[g])
+           {
+               t=0;
+               break;
+           }
+           g--;
+        }
+
+        if(t==0)
+            printf("Case %d: impossible\n",n);
+        else
+        {printf("Case %d: ",n);
+          for(int h=0;h<sizeof(arr);h++)
+          {
+              cout<<arr[h];
+          }
+          cout<<"\n";
+
+
+        }
+
+
+
+
+    }
+
+}
