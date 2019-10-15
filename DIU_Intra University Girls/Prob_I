@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    for(int k=1; k<=t; k++)
+    {
+        long long n;
+        cin>>n;
+        if(n%2!=0)
+            cout<<"Chicken First!"<<endl;
+        else
+        {
+            int c=0;
+            while(1)
+            {
+                if(n%2!=0)
+                    break;
+                n=n/2;
+                c++;
+            }
+            if(c%2==0)
+                cout<<"Chicken First!"<<endl;
+            else
+                cout<<"Egg First!"<<endl;
+        }
+    }
+}
