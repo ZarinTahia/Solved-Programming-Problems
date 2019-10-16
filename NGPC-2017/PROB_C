@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int j=1; j<=t; j++)
+    {
+        char a[10001];
+        char b[10001];
+        cin>>a;
+
+        cin>>b;
+        int i=0;
+        while(1)
+        {
+            if(a[i]=='0')
+            {
+                i++;
+            }
+            else
+                break;
+
+        }
+        int k=0;
+        while(1)
+        {
+            if(b[k]=='0')
+            {
+                k++;
+            }
+            else
+                break;
+
+        }
+        int ln1=strlen(a);
+        int ln2=strlen(b);
+
+        if((ln1-i)>(ln2-k))
+        {
+
+            printf("Case %d: A\n",j);
+            continue;
+
+        }
+
+        else if((ln1-i)<(ln2-k))
+        {
+
+            printf("Case %d: B\n",j);
+            continue;
+
+        }
+
+
+        if(strcmp(a+i,b+k)==0)
+            printf("Case %d: Same\n",j);
+        else if(strcmp(a+i,b+k)>0)
+            printf("Case %d: A\n",j);
+        else if(strcmp(a+i,b+k)<0)
+            printf("Case %d: B\n",j);
+
+
+
+    }
+}
