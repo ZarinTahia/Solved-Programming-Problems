@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int t;
+        cin>>t;
+        vector<int>v;
+        vector<int>fun(0);
+
+        for(int i=0; i<t; i++)
+        {
+            int a;
+            cin>>a;
+            v.push_back(a);
+
+        }
+        for(int i=0; i<t-1; i++)
+        {
+            int min=v[i];
+            int c=1;
+            for(int j=i+1; j<t; j++)
+            {
+                if(v[j]<min)
+                {
+
+                    c++;
+                    min=v[j];
+                }
+            }
+            //cout<<c<<endl;
+            fun.push_back(c);
+        }
+        sort(fun.begin(),fun.end());
+        cout<<fun[fun.size()-1]<<endl;
+    }
+
+
+
+
+}
+
