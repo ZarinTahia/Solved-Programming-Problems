@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+using namespace std;
+int fact(int a)
+{
+    int b=1;
+    for(int i=1; i<=a; i++)
+    {
+        b=b*i;
+    }
+    return b;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int j=1; j<=t; j++)
+    {
+        string s;
+        cin>>s;
+        int ln=s.size();
+        int ans=1;
+        for(int i=1; i<=ln; i++)
+        {
+            ans=ans*i;
+        }
+
+        int a[26];
+        for(int i=0; i<26; i++)
+        {
+            a[i]=0;
+            //cout<<a[i]<<" ";
+        }
+        for(int i=0; i<s.size(); i++)
+        {
+            int b=(int)(s[i])-97;
+            // cout<<b<<endl;
+            a[b]=a[b]+1;
+
+        }
+
+        int div=1;
+        for(int f=0; f<26; f++)
+        {
+            if(a[f]>1)
+                div=div*fact(a[f]);
+        }
+        //cout<<div<<endl;
+        if(div!=0)
+        {
+            ans=ans/(div*1.0);
+        }
+
+        printf("Case %d: %d\n",j,ans);
+
+
+    }
+}
+
+
