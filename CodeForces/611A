@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int a,j;
+   j=0;
+   string s="";
+   string str;
+   cin>>a>>s>>str;
+   if(str=="month")
+   {
+       if(a==30)
+        j=11;
+       else if(a==31)
+        j=7;
+       else
+        j=12;
+   }
+   else if(str=="week")
+   {   if(a==5||a==6)
+         j=53;
+        else
+            j=52;
+   }
+
+   cout<<j<<endl;
+    }
+
