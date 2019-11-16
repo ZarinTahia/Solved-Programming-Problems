@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int n,x;
+  cin>>n>>x;
+  vector<int>v;
+  int sum=0;
+  for(int i=0;i<n;i++)
+  {
+      int a;
+      cin>>a;
+
+      sum=sum+a;
+
+  }
+   sum=abs(sum);
+  if(sum==0)
+  {
+      cout<<0<<"\n";
+      return 0;
+  }
+
+  int co=1;
+  while(sum>x)
+  {
+      sum=sum-x;
+      co++;
+  }
+  cout<<co<<"\n";
+
+
+    }
+
