@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int a,b,n;
+  cin>>a>>b>>n;
+  for(int i=-1000;i<=1000;i++)
+   {
+
+    if(b==a*pow(i,n))
+       {cout<<i<<"\n";
+         return 0;
+       }
+   }
+   cout<<"No solution\n";
+
+
+    }
+
