@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+int n;
+cin>>n;
+while(n--)
+{
+    int t;
+    cin>>t;
+    int a[t];
+    for(int i=0;i<t;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+t);
+    int c=0;
+    for(int i=0;i<t;i++)
+    {   int k=0;
+        if(a[i]==0)
+          continue;
+        else
+        {c++;
+         k=i;
+          //cout<<"c counting "<<a[i]<<endl;
+
+        }
+        for(int j=k+1;j<t;j++)
+        {
+            if(a[j]!=0&&abs(a[k]-a[j])>1)
+            {
+
+                          a[k]=0;
+                          k=j;
+                          //cout<<i<<" "<<j<<endl;
+                          //cout<<a[j]<<endl;
+                          continue;
+
+            }
+
+
+
+        }
+         a[k]=0;
+
+
+    }
+
+    cout<<c<<"\n";
+
+
+}
+}
