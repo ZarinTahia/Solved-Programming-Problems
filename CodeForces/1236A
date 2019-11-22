@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int a,b,c;
+        cin>>a>>b>>c;
+        int s=a;
+        int m=b;
+        int n=c;
+
+        int e=0;
+        int f=0;
+        int sum=0;
+        int sum2=0;
+
+
+        e=min(a,b/2);
+        sum=e+2*e;
+        a=a-e;
+        b=b-2*e;
+        e=min(b,c/2);
+        sum=sum+e+2*e;
+
+        // cout<<sum<<endl;
+
+
+        f=min(m,n/2);
+        sum2=f+2*f;
+        m=m-f;
+        n=n-2*f;
+        f=min(s,m/2);
+        sum2=sum2+f+2*f;
+
+        //cout<<sum2<<endl;
+        if(sum2>sum)
+            cout<<sum2<<"\n";
+        else
+            cout<<sum<<"\n";
+
+
+    }
+}
